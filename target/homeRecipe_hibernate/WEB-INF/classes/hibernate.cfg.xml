@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+		<property name="connection.username">Brendan</property>
+		<property name="connection.password">j0o0h0n0</property>
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.timeout">1800</property>
+		<property name="hibernate.c3p0.max_statements">50</property>
+		
+
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+		<!--是否要顯示實際操作資料庫時的SQL -->
+		<property name="hibernate.show_sql">true</property>
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="hibernate.current_session_context_class">thread</property>
+
+<!-- 		<mapping resource="com/recipe/model/RecipeVO.hbm.xml" /> -->
+<!-- 		<mapping resource="com/kindCode/model/KindCodeVO.hbm.xml" /> -->
+<!-- 		<mapping resource="com/cookWayCode/model/CookWayCode.hbm.xml" /> -->
+
+			<mapping class="com.recipe.model.RecipeVO"/>
+			<mapping class="com.kindCode.model.KindCodeVO"/>
+			<mapping class="com.cookWayCode.model.CookWayCodeVO"/>
+		
+	</session-factory>
+
+</hibernate-configuration>

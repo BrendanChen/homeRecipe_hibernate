@@ -1,0 +1,16 @@
+	<div class='form-inline ingredient clearfix'>
+		<div class='form-group required maxlen'>
+			<input type='text'
+				class='form-control ingredient-name required maxlen'
+				placeholder='食材' name='iname' required='' value=''>
+		</div>
+		<div class='form-group required maxlen'>
+			<input type='text'
+				class='form-control ingredient-unit required maxlen'
+				placeholder='份量' name='quantity' required='' value=''>
+		</div>
+		<div class='pull-left edit-fn'>
+			<a class='btn btn-remove destroy removebtn'
+				onclick='deleteIngredient()'></a>
+		</div>
+	</div>
