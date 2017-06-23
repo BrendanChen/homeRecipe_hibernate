@@ -15,7 +15,8 @@ import javax.persistence.criteria.Root;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import com.recipe.model.RecipeVO;
+
+import com.spring.entity.RecipeVO;
 
 public class HibernateUtil_CompositeQuery_Rcp {
 

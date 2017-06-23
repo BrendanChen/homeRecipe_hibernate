@@ -2,26 +2,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<%@page import="com.spring.service.*"%>
+<%@page import="com.spring.entity.*"%>
+<%@page import="com.spring.domainObject.*"%>
 
-<%@ page import="com.recipe.model.*"%>
-<%@ page import="com.ingredient.model.*"%>
-<%@ page import="com.step.model.*"%>
 
 <%@ page import="java.util.*"%>
 
 <%@ page import="java.lang.reflect.Array"%>
 
-<%@ page import="domain.IngreList"%>
-
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%
-	String rcpSeq = (String) request.getAttribute("rcp_seq");
+	Object rcpSeq = request.getAttribute("rcp_seq");
 
 	RecipeVO recipeData = new RecipeVO();
 
-	recipeData.setRcpSeq(rcpSeq);
+	recipeData.setRcpSeq(Integer.valueOf((String)rcpSeq));
 
 	RcpServiceImpl rcpServiceImpl = new RcpServiceImpl();
 
@@ -32,7 +30,7 @@
 	//查詢有幾組食材
 	IngreServiceImpl impl = new IngreServiceImpl();
 	List<Integer> groupNoList = impl.findHowManyGroup(recipeVO.getRcpSeq());
-
+	
 	IngreList<List<IngredientVO>> ingreList = new IngreList<List<IngredientVO>>();
 
 	List<IngredientVO> list = null;
@@ -40,7 +38,7 @@
 	for (Integer groupNoData : groupNoList) {
 
 		list = new ArrayList<IngredientVO>();
-		list = impl.findByPkGroupByGroupNo(recipeVO.getRcpSeq(), groupNoData);
+		list = impl.findByPkGroupByGroupNo(recipeVO.getRcpSeq().intValue(), groupNoData);
 
 		if (list != null) {
 

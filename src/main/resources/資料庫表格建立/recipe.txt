@@ -12,7 +12,7 @@ DROP SEQUENCE ingredient_seq;
 
 
 CREATE TABLE RECIPE (
- RCP_SEQ             VARCHAR2(20) NOT NULL,
+ RCP_SEQ             NUMBER(10),
  CREATE_DT              DATE,
  RNAME                     VARCHAR2(100),
  KIND_NO					 VARCHAR2(20),
@@ -41,7 +41,7 @@ INSERT INTO RECIPE (RCP_SEQ,CREATE_DT,RNAME,KIND_NO,COOK_WAY_NO,COOK_TIME,SERVIN
 
 CREATE TABLE INGREDIENT(
  INGRE_NO				NUMBER(5),
- RCP_SEQ				 VARCHAR2(20) NOT NULL,
+ RCP_SEQ				  NUMBER(10),
  CREATE_DT				DATE,
  INAME                	VARCHAR2(40),
  QUANTITY                 VARCHAR2(40),
@@ -57,31 +57,31 @@ NOCYCLE
 NOCACHE;
  
 
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'消化餅乾（麥維他)','100g',1,'餅乾體');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'無鹽奶油（融化）','100g',1,'餅乾體');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'奶油乳酪','200g',2,'養樂多起司');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'細砂糖','40g',2,'養樂多起司');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'動物性鮮奶油','100g',2,'養樂多起司');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'養樂多','70g',2,'養樂多起司');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'吉利丁粉','5g',2,'養樂多起司');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'冷開水','15g',2,'養樂多起司');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'吉利丁粉','20g',3,'養樂多凍');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'冷開水','60g',3,'養樂多凍');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'養樂多','140g',3,'養樂多凍');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'消化餅乾（麥維他)','100g',1,'餅乾體');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'無鹽奶油（融化）','100g',1,'餅乾體');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'奶油乳酪','200g',2,'養樂多起司');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'細砂糖','40g',2,'養樂多起司');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'動物性鮮奶油','100g',2,'養樂多起司');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'養樂多','70g',2,'養樂多起司');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'吉利丁粉','5g',2,'養樂多起司');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'冷開水','15g',2,'養樂多起司');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'吉利丁粉','20g',3,'養樂多凍');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'冷開水','60g',3,'養樂多凍');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'養樂多','140g',3,'養樂多凍');
 
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7002',TO_DATE('1981-11-17','YYYY-MM-DD'),'消化餅乾(麥維他）','100g',1,'餅乾體');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7002',TO_DATE('1981-11-17','YYYY-MM-DD'),'無鹽奶油（融化）','50g',1,'餅乾體');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7002',TO_DATE('1981-11-17','YYYY-MM-DD'),'新鮮草莓（切半）','6顆',1,'餅乾體');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7002',TO_DATE('1981-11-17','YYYY-MM-DD'),'奶油乳酪','300g',2,'起司糊');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7002',TO_DATE('1981-11-17','YYYY-MM-DD'),'細砂糖','60g',2,'起司糊');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7002',TO_DATE('1981-11-17','YYYY-MM-DD'),'動物性鮮奶油','150g',2,'起司糊');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7002',TO_DATE('1981-11-17','YYYY-MM-DD'),'吉利丁粉','8g',2,'起司糊');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7002',TO_DATE('1981-11-17','YYYY-MM-DD'),'冷開水','24g',2,'起司糊');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7002',TO_DATE('1981-11-17','YYYY-MM-DD'),'細砂糖','50g',3,'覆盆子凍');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7002',TO_DATE('1981-11-17','YYYY-MM-DD'),'開水','50g',3,'覆盆子凍');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7002',TO_DATE('1981-11-17','YYYY-MM-DD'),'吉利丁粉','4g',3,'覆盆子凍');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7002',TO_DATE('1981-11-17','YYYY-MM-DD'),'冷開水','12g',3,'覆盆子凍');
-INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,'7002',TO_DATE('1981-11-17','YYYY-MM-DD'),'新鮮覆盆子','100g',3,'覆盆子凍');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7002,TO_DATE('1981-11-17','YYYY-MM-DD'),'消化餅乾(麥維他）','100g',1,'餅乾體');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7002,TO_DATE('1981-11-17','YYYY-MM-DD'),'無鹽奶油（融化）','50g',1,'餅乾體');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7002,TO_DATE('1981-11-17','YYYY-MM-DD'),'新鮮草莓（切半）','6顆',1,'餅乾體');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7002,TO_DATE('1981-11-17','YYYY-MM-DD'),'奶油乳酪','300g',2,'起司糊');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7002,TO_DATE('1981-11-17','YYYY-MM-DD'),'細砂糖','60g',2,'起司糊');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7002,TO_DATE('1981-11-17','YYYY-MM-DD'),'動物性鮮奶油','150g',2,'起司糊');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7002,TO_DATE('1981-11-17','YYYY-MM-DD'),'吉利丁粉','8g',2,'起司糊');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7002,TO_DATE('1981-11-17','YYYY-MM-DD'),'冷開水','24g',2,'起司糊');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7002,TO_DATE('1981-11-17','YYYY-MM-DD'),'細砂糖','50g',3,'覆盆子凍');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7002,TO_DATE('1981-11-17','YYYY-MM-DD'),'開水','50g',3,'覆盆子凍');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7002,TO_DATE('1981-11-17','YYYY-MM-DD'),'吉利丁粉','4g',3,'覆盆子凍');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7002,TO_DATE('1981-11-17','YYYY-MM-DD'),'冷開水','12g',3,'覆盆子凍');
+INSERT INTO INGREDIENT VALUES (ingredient_seq.NEXTVAL,7002,TO_DATE('1981-11-17','YYYY-MM-DD'),'新鮮覆盆子','100g',3,'覆盆子凍');
 
 
 CREATE TABLE RCP_KIND_CODE(
@@ -107,30 +107,30 @@ CREATE TABLE COOK_WAY_CODE(
 
 CREATE TABLE STEP(
  STEP_NO			 VARCHAR2(20) NOT NULL,
- RCP_SEQ             VARCHAR2(20) NOT NULL,
+ RCP_SEQ             NUMBER(10),
  CREATE_DT                 DATE NOT NULL,
  DETAIL					VARCHAR2(500),
  PHOTO				   		VARCHAR2(500));
  
  
- INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES ('1','7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'餅乾體～消化餅乾壓碎後（越碎越好，我用食物料理機打碎），加入融化的無鹽奶油攪拌均勻。','7001_1.jpg');
- INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('2','7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'餅乾體～倒入直徑12.7cm(5吋）的活底蛋糕模裏確實壓平壓緊實，放在冰箱冷藏30分鐘。（我的5吋模高度有6cm)','7001_2.jpg');
- INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('3','7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'吉利丁粉加冷開水，泡5分鐘，再用隔水加熱到成液體備用。','7001_3.jpg');
- INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('4','7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'鍋內放奶油乳酪➕動物性鮮奶油➕細砂糖。','7001_4.jpg'); 	
- INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('5','7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'隔水加熱的方式攪拌均勻到滑順漂亮有光澤的質地，加入養樂多攪拌均勻，最後加入剛剛泡好的吉利丁液攪拌均勻。','7001_5.jpg'); 	
- INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('6','7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'過篩起司糊再倒入模具裏，左右搖晃讓起司糊平整，在桌面上震幾次震出小氣泡，放冰箱冷藏至少2個小時以上。','7001_6.jpg'); 	
- INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('7','7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'養樂多凍～（要等到起司糊已經冰2個小時了才可以做養樂多凍）吉利丁粉➕冷開水，泡5分鐘，再用隔水加熱融化成液體，直接倒入養樂多攪拌均勻。（這時會有很多泡沫，記得要過篩）','7001_7.jpg'); 
- INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('8','7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'倒入模具到滿模即可，表面若還是有些許泡沫，可以用擦手紙輕輕放在表面吸收泡沫，再直接拉走擦手紙即可，蛋糕要放冰箱冷藏至少6個小時以上或冰到隔天。（養樂多凍會有多的，可以倒入可愛的矽膠模具裡騙騙小朋友）','7001_8.jpg'); 	
- INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('9','7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'脫模～用吹風機吹模具的周圍，每一個地方吹個20秒左右，模具底部放個沒有耳朵的杯子，將模具往下壓就可以脫模了。','7001_9.jpg'); 
- INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('10','7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'好嫩的顏色😍','7001_10.jpg'); 
- INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('11','7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'我打算全部切片，底部的模我就沒脫模了','7001_11.jpg'); 
- INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('12','7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'',''); 
- INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('13','7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'非常養樂多的起司蛋糕^_^吃到的每一口都有養樂多的香味，值得推薦喔^_^','7001_13.jpg'); 
- INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('14','7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'起司糊有過篩真的有差喔，我做了那麼多次的起司蛋糕，怎麼現在才想到要過篩呢？！','7001_14.jpg');
- INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('15','7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'密封冷藏保存約8～10天，密封冷凍可以保存2～3個月，要吃之前放冷藏結凍即可。（在我家一下子就吃完了）','7001_15.jpg');  
- INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('16','7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'太多人問，要換其他尺寸的模具，材料要怎麼算，這張圖請仔細看，左邊是原食譜的尺寸，最上面是你要做的尺寸，直接對應就可以找到答案了。','7001_16.jpg'); 
- INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('17','7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'用吉利丁片做法：用相同的克數，吉利丁片泡在冰塊開水中，要完全壓入水中，泡5分鐘，泡軟後撈起擰乾多的水份，在起司糊攪拌均勻後直接放入再攪拌均勻即可。','7001_17.jpg'); 
- INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('18','7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'若是要用吉利t粉：（用一樣的克數）奶油乳酪➕細砂糖用隔水加熱攪拌均勻（乳酪糊），動物性鮮奶油吉利t➕冷開水50g（配方外）混合均勻，用小火加熱6～7分鐘到吉利t完全融化，趁熱倒入乳酪糊中混合均勻，再倒入模具裏冷藏。請注意！用吉利t做所有材料都必須是室溫狀態，否則吉利t會瞬間凝固造成失敗喔。','7001_18.jpg');
- INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('19','7001',TO_DATE('1981-11-17','YYYY-MM-DD'),'若是用寒天粉：奶油乳酪用打蛋器攪拌成乳霜狀（乳酪糊），吉利丁：寒天粉=1:0.6（克數自己算），跟其他材料一起放鍋中，用小火煮到寒天粉融化，然後馬上加入乳酪糊混合均勻，趁熱倒入模具裏抹平，室溫即凝固。','7001_19.jpg'); 
+ INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES ('1',7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'餅乾體～消化餅乾壓碎後（越碎越好，我用食物料理機打碎），加入融化的無鹽奶油攪拌均勻。','7001_1.jpg');
+ INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('2',7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'餅乾體～倒入直徑12.7cm(5吋）的活底蛋糕模裏確實壓平壓緊實，放在冰箱冷藏30分鐘。（我的5吋模高度有6cm)','7001_2.jpg');
+ INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('3',7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'吉利丁粉加冷開水，泡5分鐘，再用隔水加熱到成液體備用。','7001_3.jpg');
+ INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('4',7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'鍋內放奶油乳酪➕動物性鮮奶油➕細砂糖。','7001_4.jpg'); 	
+ INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('5',7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'隔水加熱的方式攪拌均勻到滑順漂亮有光澤的質地，加入養樂多攪拌均勻，最後加入剛剛泡好的吉利丁液攪拌均勻。','7001_5.jpg'); 	
+ INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('6',7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'過篩起司糊再倒入模具裏，左右搖晃讓起司糊平整，在桌面上震幾次震出小氣泡，放冰箱冷藏至少2個小時以上。','7001_6.jpg'); 	
+ INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('7',7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'養樂多凍～（要等到起司糊已經冰2個小時了才可以做養樂多凍）吉利丁粉➕冷開水，泡5分鐘，再用隔水加熱融化成液體，直接倒入養樂多攪拌均勻。（這時會有很多泡沫，記得要過篩）','7001_7.jpg'); 
+ INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('8',7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'倒入模具到滿模即可，表面若還是有些許泡沫，可以用擦手紙輕輕放在表面吸收泡沫，再直接拉走擦手紙即可，蛋糕要放冰箱冷藏至少6個小時以上或冰到隔天。（養樂多凍會有多的，可以倒入可愛的矽膠模具裡騙騙小朋友）','7001_8.jpg'); 	
+ INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('9',7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'脫模～用吹風機吹模具的周圍，每一個地方吹個20秒左右，模具底部放個沒有耳朵的杯子，將模具往下壓就可以脫模了。','7001_9.jpg'); 
+ INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('10',7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'好嫩的顏色😍','7001_10.jpg'); 
+ INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('11',7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'我打算全部切片，底部的模我就沒脫模了','7001_11.jpg'); 
+ INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('12',7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'',''); 
+ INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('13',7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'非常養樂多的起司蛋糕^_^吃到的每一口都有養樂多的香味，值得推薦喔^_^','7001_13.jpg'); 
+ INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('14',7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'起司糊有過篩真的有差喔，我做了那麼多次的起司蛋糕，怎麼現在才想到要過篩呢？！','7001_14.jpg');
+ INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('15',7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'密封冷藏保存約8～10天，密封冷凍可以保存2～3個月，要吃之前放冷藏結凍即可。（在我家一下子就吃完了）','7001_15.jpg');  
+ INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('16',7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'太多人問，要換其他尺寸的模具，材料要怎麼算，這張圖請仔細看，左邊是原食譜的尺寸，最上面是你要做的尺寸，直接對應就可以找到答案了。','7001_16.jpg'); 
+ INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('17',7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'用吉利丁片做法：用相同的克數，吉利丁片泡在冰塊開水中，要完全壓入水中，泡5分鐘，泡軟後撈起擰乾多的水份，在起司糊攪拌均勻後直接放入再攪拌均勻即可。','7001_17.jpg'); 
+ INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('18',7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'若是要用吉利t粉：（用一樣的克數）奶油乳酪➕細砂糖用隔水加熱攪拌均勻（乳酪糊），動物性鮮奶油吉利t➕冷開水50g（配方外）混合均勻，用小火加熱6～7分鐘到吉利t完全融化，趁熱倒入乳酪糊中混合均勻，再倒入模具裏冷藏。請注意！用吉利t做所有材料都必須是室溫狀態，否則吉利t會瞬間凝固造成失敗喔。','7001_18.jpg');
+ INSERT INTO STEP(STEP_NO,RCP_SEQ,CREATE_DT,DETAIL,PHOTO) VALUES('19',7001,TO_DATE('1981-11-17','YYYY-MM-DD'),'若是用寒天粉：奶油乳酪用打蛋器攪拌成乳霜狀（乳酪糊），吉利丁：寒天粉=1:0.6（克數自己算），跟其他材料一起放鍋中，用小火煮到寒天粉融化，然後馬上加入乳酪糊混合均勻，趁熱倒入模具裏抹平，室溫即凝固。','7001_19.jpg'); 
  
 commit;
